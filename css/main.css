@@ -8,25 +8,37 @@ html {
 	padding: 0 30px;
 }
 body {
+	display: flex;
+	flex-direction: column;
 	font-family: helvetica, arial, sans;
+	min-height: 100vh;
 }
-a {
-	color: red;
+.content-container {
+	display: flex;
+	flex: 1 1 auto;
+	padding-top: 10vh;
+	width: 100%;
 }
 h1 {
-	margin-top: 0;
 	font-size: 7vw;
-}
-h2 {
-	font-size: 2em;
+	margin-top: 0;
 }
 p {
 	line-height: 1.5;
 }
+a {
+	color: red;
+}
 h2 ~ p {
-	text-align: center;
+	font-size: 0.8em;
 	font-style: italic;
-	margin: 0 7%;
+	margin: 1em auto 0;
+	text-align: center;
+}
+h4 {
+	color: #999;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 
@@ -38,8 +50,8 @@ h2 ~ p {
 	background-color: #000;
 	color: #fff;
 	position: fixed;
-	z-index: 20;
 	width: 100%;
+	z-index: 20;
 }
 .header-logo {
 	background-color: #000;
@@ -74,16 +86,6 @@ h2 ~ p {
 .header-nav a {
 	color: #fff;
 }
-.header-nav a:hover,
-.header-nav a:active{
-	color: #ed6e2f;
-}
-.header-nav > li:first-child a {
-	color: #ed6e2f;
-}
-.header-nav > li:first-child a:hover {
-	color: #fff;
-}
 .nav-links a {
 	font-size: 0.8rem;
 	font-weight: bold;
@@ -94,6 +96,12 @@ h2 ~ p {
 .nav-links a:active {
 	color: #ed6e2f;
 }
+.header-nav > li:first-child a {
+	color: #ed6e2f;
+}
+.header-nav > li:first-child a:hover {
+	color: #fff;
+}
 
 
 
@@ -101,7 +109,7 @@ h2 ~ p {
 /* FOOTER STYLES */
 
 .footer {
-	background-color: #444;
+	background-color: #000;
 	padding: 10vh 0 15vh;
 	text-align: center;
 }
@@ -126,14 +134,71 @@ h2 ~ p {
 
 
 
+/* COLUMN STYLES */
+
+.col-three {
+	display: flex;
+	flex: 1;
+}
+.col {
+	box-sizing: border-box;
+	padding: 2em;
+}
+.col-three .col ~ .col {
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.col-three .col-nav {
+	flex: 0 1 15em;
+}
+.col-three .col-content {
+	flex: 1 1 0;
+}
+.col-three .col-aside {
+	flex: 0 1 20em;
+}
+.col-two {
+	display: flex;
+}
+.col-two .col-aside {
+	flex: 0 0 20em;
+	order: 1;
+}
+.col-two .col-content {
+	flex: 1;
+}
+
+
+
+
+/* PAGE STYLES */
+
+.page {
+	margin: 10vh auto 15vh;
+	max-width: 980px;
+	width: 85vw;
+}
+.page h1 {
+	font-size: 3em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+.page h2 {
+	margin-bottom: 0.5em;
+}
+.page h4 {
+	margin-bottom: 1em;
+}
+
+
+
+
 /* HERO STYLES */
 
 .full-hero {
 	background-color: #c7dbfc;
 	background-size: cover;
 	box-sizing: border-box;
-	height: 100vh;
-	padding: 10vh 0 0 0;
+	height: 90vh;
 }
 .full-hero:after {
 	bottom: 2vh;
@@ -223,17 +288,28 @@ h2 ~ p {
 	text-align: center;
 }
 .home-callout {
+	align-items: center;
 	background-color: #000;
 	color: #fff;
+	display: flex;
 	padding: 7vh 0;
 }
+.home-callout h3 {
+	color: inherit;
+	margin-top: 1em;
+}
 .callout-title {
+	border: 1px solid red;
+	flex: 1 1 0;
 	font-size: 5.75vw;
 	text-align: right;
 	text-transform: uppercase;
 }
 .callout-copy {
+	border: 1px solid yellow;
+	flex: 0 0 45em;
 	font-size: 0.8rem;
+	padding: 0 3vw;
 }
 
 
@@ -282,4 +358,98 @@ h2 ~ p {
 }
 .bio-copy a {
 	color: green;
+}
+
+
+
+
+/* GALLERY STYLES */
+
+.gallery-thumbs {
+	height: 90vh;
+	overflow: scroll;
+}
+.gallery-thumbs div {
+	cursor: pointer;
+}
+.gallery-thumbs img {
+	box-sizing: border-box;
+	box-shadow: 0 0 0 5px transparent;
+	display: inline-block;
+	margin: 0 0 10px;
+	opacity: 0.5;
+	transition: all 0.5s ease-in-out;
+	width: 100%;
+}
+.gallery-thumbs img:hover {
+	opacity: 1;
+}
+.gallery-thumbs .current img {
+	box-shadow: 0 0 0 5px #ed6e2f;
+	opacity: 1;
+}
+.gallery-thumbs .current img {
+	cursor: default;
+}
+.gallery-photo {
+	position: relative;
+}
+.gallery-photo img {
+	width: 100%;
+}
+.gallery-info {
+	font-size: 0.8rem;
+}
+.gallert-info h3 {
+	margin-bottom: 1rem;
+}
+
+
+
+
+/* BLOG STYLES */
+
+.blog-recent {
+	text-align: right;
+}
+.blog-title-list {
+	list-style: none;
+	padding: 0;
+}
+.blog-title-list li ~ li {
+	margin-top: 1.5em;
+}
+.blog-title-list span {
+	color: #999;
+	display: block;
+	font-size: 0.8em;
+	font-style: italic;
+	margin-top: 0.5em;
+}
+.blog-posts ~ .blog-posts {
+	border-top: 1px dotted rgba(0, 0, 0, 0.1);
+	margin-top: 4em;
+	padding-top: 4em;
+}
+.blog-posts .post-header {
+	font-size: 0.8rem;
+}
+.post-header {
+	margin-bottom: 1.5em;
+}
+.post-header img,
+.post-header .social-link {
+	margin-right: 0.5em;
+}
+.post-header img {
+	border-radius: 99px;
+	display: inline-block;
+	height: 2em;
+	vertical-align: middle;
+}
+.posts-image {
+	background-position: center;
+	background-size: cover;
+	height: 6em;
+	margin-bottom: 1.5em;
 }
