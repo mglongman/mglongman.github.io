@@ -1,10 +1,10 @@
 ---
 layout: post
-title: This is the title of the post
+title: First Blog Post Title
 postHero: /images/shark.jpg
-author: Me, Myself, and I
+author: Matt Longman
 authorTwitter: https://twitter.com/mglongman
-gravatar: https://gravatar.com/avatar/ffda7d145b83c4b118f982401f962ca6?s=150
+gravatar: https://en.gravatar.com/userimage/105640897/828de7d0710bb718417ac5e013c890e9.png
 postFooter: Additional information, and maybe a <a href="#">link or two</a>
 ---
 

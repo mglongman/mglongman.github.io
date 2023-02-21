@@ -23,11 +23,18 @@ h1 {
 	font-size: 7vw;
 	margin-top: 0;
 }
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Raleway', helvetica, sans;
+	font-weight: 100;
+}
+h2 {
+	font-size: 2em;
+}
 p {
 	line-height: 1.5;
 }
 a {
-	color: red;
+	color: #6397b5;
 }
 h2 ~ p {
 	font-size: 0.8em;
@@ -212,6 +219,11 @@ h4 {
 .full-hero:hover {
 	background-color: #c1d6f4;
 }
+.half-hero {
+	background-position: center center;
+	background-size: cover;
+	height: 40vh;
+}
 .hero-home {
 	background-image: url(/images/shark.jpg);
 	background-position: center top;
@@ -286,6 +298,17 @@ h4 {
 .home-section h2 {
 	margin-bottom: 1.5rem;
 	text-align: center;
+}
+.home-section h4 {
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+.home-section .post-header {
+	text-align: center;
+}
+.home-section .blog-posts {
+	margin: auto;
+	width: 75%;
 }
 .home-callout {
 	align-items: center;
@@ -429,7 +452,7 @@ h4 {
 .blog-title-list img {
 	border-radius: 99px;
 	display: inline-block;
-	height: 2em;
+	height: 3em;
 	vertical-align: middle;
 }
 .blog-posts ~ .blog-posts {
@@ -450,7 +473,7 @@ h4 {
 .post-header img {
 	border-radius: 99px;
 	display: inline-block;
-	height: 2em;
+	height: 3em;
 	vertical-align: middle;
 }
 .posts-image {
@@ -458,4 +481,56 @@ h4 {
 	background-size: cover;
 	height: 6em;
 	margin-bottom: 1.5em;
+}
+.post {
+	width: 100%
+}
+.post-content,
+.post-footer {
+	margin: auto;
+	max-width: 40em;
+	width: 85vh;
+}
+.pull-left {
+	float: left;
+	margin: 2em 2em 2em -2%;
+}
+.pull-right {
+	float: right;
+	margin: 2em -2% 2em 2em;
+}
+.post-aside {
+	background-color: rgba(0, 0, 0, 0.01);
+	float: right;
+	margin: 0 0 2em 2em;
+	padding: 2em;
+}
+.post .post-header {
+	margin-bottom: 2.5em;
+	text-align: center;
+}
+.post-content {
+	font-size: 1.1rem;
+}
+.post-footer {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	font-style: italic;
+	font-size: 0.8em;
+	margin-top: 3em;
+	padding-top: 2em;
+}
+
+
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 800px) {
+	html {
+		box-shadow: none;
+		padding: 0;
+	}
+	.post-aside {
+		display: none;
+	}
 }
